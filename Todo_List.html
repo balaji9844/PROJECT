@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>To do List </title>
+    </head>
+    <body>
+        <style>
+            h1{
+                color:red;
+            }
+            input{
+                color:blue;
+            }
+            ul{
+                color:purple;
+            }
+         </style>
+             <h1>TO DO LIST</h1>
+             <input id="input" >
+             <button onclick="add()">Add</button>
+             <ul id="list_container">
+             <li>
+                Hello
+                <button onclick="delete_list(event)">Delete</button>
+            </li>
+            </ul>
+        <script>
+            var input=document.getElementById("input");
+            var ul=document.getElementById("list_container");
+            function add()
+            {
+                var li=document.createElement("li");
+                li.innerHTML=input.value+"<button onclick='delete_list(event)'>Delete<button>";
+                ul.append(li);    
+
+            }
+            function delete_list(event)
+            {
+                event.target.parentElement.remove();
+                
+            }
+        </script>
+    </body>
+</html>
